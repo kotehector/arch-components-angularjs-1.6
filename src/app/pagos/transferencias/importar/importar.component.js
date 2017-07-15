@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-var pagosTransferenciasTodas = {
-  templateUrl: 'app/pagos/transferencias/todas/todas.html',
+var pagosTransferenciasImportar = {
+  templateUrl: 'app/pagos/transferencias/importar/importar.html',
   controller: function($state) {
     var ctrl = this;
 
@@ -17,17 +17,17 @@ var pagosTransferenciasTodas = {
 
 angular
   .module('transferencias')
-  .component('pagosTransferenciasTodas', pagosTransferenciasTodas)
+  .component('pagosTransferenciasImportar', pagosTransferenciasImportar)
   .config(config);
 
 function config($stateProvider) {
   $stateProvider
-    .state('pagos.transferencias.todas', {
+    .state('pagos.transferencias.importar', {
       parent: 'pagos.transferencias',
-      url: '/todas',
+      url: '/importar',
       views: {
         'transferencias-content@pagos.transferencias': {
-            component: 'pagosTransferenciasTodas'
+            component: 'pagosTransferenciasImportar'
         }
       }
     });

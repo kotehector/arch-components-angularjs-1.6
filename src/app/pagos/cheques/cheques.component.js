@@ -2,7 +2,17 @@
     'use strict';
 
 var pagosCheques = {
-  templateUrl: 'app/pagos/cheques/cheques.html'
+  templateUrl: 'app/pagos/cheques/cheques.html',
+  controller: function($state) {
+    var ctrl = this;
+
+    ctrl.$onInit = function() {};
+
+    ctrl.$postLink = function() {
+      ctrl.uiState = $state.current;
+        console.log(ctrl.uiState);
+    };
+  }
 }
 
 angular
@@ -12,7 +22,7 @@ angular
 
 function config($stateProvider) {
   $stateProvider
-    .state('cheques', {
+    .state('pagos.cheques', {
       parent: 'pagos',
       url: '/cheques', // borrar toda la url del padre
       views: {

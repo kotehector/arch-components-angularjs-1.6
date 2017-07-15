@@ -1,11 +1,14 @@
+<pre>class="transferencias" | transferencias.html</pre>
+<pre class="pre-router">ui-sref: {{ $ctrl.uiState.name }}</pre>
+
 <div class="transferencias">
 
   <h1>Transferencias</h1>
 
-  <pre>class="transferencias__menu" | ui-view="transferencias-menu"</pre>
+  <pre>class="transferencias__menu" | ui-view="transferencias-menu" | transferencias.html</pre>
   <div class="transferencias__menu" ui-view="transferencias-menu"></div>
 
-  <pre>class="transferencias__content" | ui-view="transferencias-content"</pre>
+  <pre>class="transferencias__content" | ui-view="transferencias-content" | transferencias.html</pre>
   <div class="transferencias__content" ui-view="transferencias-content"></div>
 
 </div>

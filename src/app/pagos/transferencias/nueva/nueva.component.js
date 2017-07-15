@@ -1,13 +1,23 @@
 (function() {
     'use strict';
 
-var pagosTransferenciaNueva = {
-  templateUrl: 'app/pagos/transferencias/nueva/nueva.html'
+var pagosTransferenciasNueva = {
+  templateUrl: 'app/pagos/transferencias/nueva/nueva.html',
+  controller: function($state) {
+    var ctrl = this;
+
+    ctrl.$onInit = function() {};
+
+    ctrl.$postLink = function() {
+      ctrl.uiState = $state.current;
+        console.log(ctrl.uiState);
+    }
+  }
 }
 
 angular
   .module('transferencias')
-  .component('pagosTransferenciaNueva', pagosTransferenciaNueva)
+  .component('pagosTransferenciasNueva', pagosTransferenciasNueva)
   .config(config);
 
 function config($stateProvider) {
@@ -17,7 +27,7 @@ function config($stateProvider) {
       url: '/nueva',
       views: {
         'transferencias-content@pagos.transferencias': {
-            component: 'pagosTransferenciaNueva'
+            component: 'pagosTransferenciasNueva'
         }
       }
     });

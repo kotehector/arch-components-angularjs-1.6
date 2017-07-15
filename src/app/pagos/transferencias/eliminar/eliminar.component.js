@@ -1,8 +1,8 @@
 (function() {
     'use strict';
 
-var pagosTransferenciasTodas = {
-  templateUrl: 'app/pagos/transferencias/todas/todas.html',
+var pagosTransferenciasEliminar = {
+  templateUrl: 'app/pagos/transferencias/eliminar/eliminar.html',
   controller: function($state) {
     var ctrl = this;
 
@@ -17,17 +17,17 @@ var pagosTransferenciasTodas = {
 
 angular
   .module('transferencias')
-  .component('pagosTransferenciasTodas', pagosTransferenciasTodas)
+  .component('pagosTransferenciasEliminar', pagosTransferenciasEliminar)
   .config(config);
 
 function config($stateProvider) {
   $stateProvider
-    .state('pagos.transferencias.todas', {
+    .state('pagos.transferencias.eliminar', {
       parent: 'pagos.transferencias',
-      url: '/todas',
+      url: '/eliminar',
       views: {
         'transferencias-content@pagos.transferencias': {
-            component: 'pagosTransferenciasTodas'
+            component: 'pagosTransferenciasEliminar'
         }
       }
     });

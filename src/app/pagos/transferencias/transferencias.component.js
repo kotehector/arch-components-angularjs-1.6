@@ -2,7 +2,17 @@
     'use strict';
 
 var pagosTransferencias = {
-  templateUrl: 'app/pagos/transferencias/transferencias.html'
+  templateUrl: 'app/pagos/transferencias/transferencias.html',
+  controller: function($state) {
+    var ctrl = this;
+
+    ctrl.$onInit = function() {};
+
+    ctrl.$postLink = function() {
+      ctrl.uiState = $state.current;
+        console.log(ctrl.uiState);
+    }
+  }
 }
 
 angular

@@ -2,7 +2,19 @@
     'use strict';
 
 var pagos = {
-  templateUrl: 'app/pagos/pagos.html'
+  templateUrl: 'app/pagos/pagos.html',
+  controller: function($state) {
+    var ctrl = this;
+
+    ctrl.$onInit = function() {
+
+    }
+
+    ctrl.$postLink = function() {
+      ctrl.uiState = $state.current;
+        console.log(ctrl.uiState);
+    }
+  }
 }
 
 angular
