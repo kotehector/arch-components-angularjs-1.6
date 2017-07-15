@@ -48,9 +48,6 @@ function config($stateProvider) {
         },
         '@': {
           component: 'pagosTransferencias'
-        },
-        'transferencias-menu@pagos.transferencias': {
-          component: 'transferenciasMenu'
         }
       }
     });
