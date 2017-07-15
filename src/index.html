@@ -14,31 +14,31 @@
 
   <body>
 
-    <pre>class="generador" | module.('generador') | index.html </pre>
-    <div class="generador">
-
-      <h1>Generador Web Arch Components</h1>
-
-      <ul>
-        <li>
-          <a ui-sref="pagos">Pagos</a>
-        </li>
-        <li>
-          <a ui-sref="cobros">Cobros</a>
-        </li>
-        <li>
-          <a ui-sref="admin">Admin</a>
-        </li>
-      </ul>
-
-      <pre>class="generador__content" | ui-view="generador-content" | index.html </pre>
-      <div class="generador__content" ui-view="generador-content">
-
-      </div>
-    </div>
+    <generador-web></generador-web>
 
 
     <!-- inject:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+    <script src="app/pagos/transferencias/transferencias.module.js"></script>
+    <script src="app/pagos/transferencias/transferencias.component.js"></script>
+    <script src="app/pagos/transferencias/todas/todas.component.js"></script>
+    <script src="app/pagos/transferencias/nueva/nueva.component.js"></script>
+    <script src="app/pagos/transferencias/menu/menu.component.js"></script>
+    <script src="app/pagos/transferencias/importar/importar.component.js"></script>
+    <script src="app/pagos/transferencias/eliminar/eliminar.component.js"></script>
+    <script src="app/pagos/pagos.module.js"></script>
+    <script src="app/pagos/pagos.component.js"></script>
+    <script src="app/pagos/nominas/nominas.component.js"></script>
+    <script src="app/pagos/menu/menu.component.js"></script>
+    <script src="app/pagos/confirming/confirming.component.js"></script>
+    <script src="app/pagos/cheques/cheques.component.js"></script>
+    <script src="app/generador.module.js"></script>
+    <script src="app/generador.component.js"></script>
+    <script src="app/cobros/cobros.module.js"></script>
+    <script src="app/cobros/cobros.component.js"></script>
+    <script src="app/admin/admin.module.js"></script>
+    <script src="app/admin/admin.component.js"></script>
     <!-- endinject -->
   </body>
 </html>
