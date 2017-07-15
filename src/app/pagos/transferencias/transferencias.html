@@ -5,8 +5,12 @@
 
   <h1>Transferencias</h1>
 
-  <pre>class="transferencias__menu" | ui-view="transferencias-menu" | transferencias.html</pre>
-  <div class="transferencias__menu" ui-view="transferencias-menu"></div>
+  <pre>class="transferencias__menu" | transferencias.html</pre>
+  <div class="transferencias__menu">
+    <menu
+      info="$ctrl.infoMenu">
+    </menu>
+  </div>
 
   <pre>class="transferencias__content" | ui-view="transferencias-content" | transferencias.html</pre>
   <div class="transferencias__content" ui-view="transferencias-content"></div>

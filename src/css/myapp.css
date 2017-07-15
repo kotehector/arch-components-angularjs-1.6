@@ -32,6 +32,7 @@ ul {
   border: 1px solid #800000;
   padding: 10px;
   margin: 10px; }
+  .generador .generador__menu,
   .generador .generador__content {
     padding: 10px;
     margin: 10px;
@@ -42,10 +43,7 @@ ul {
   background: #f2ffe6;
   padding: 10px;
   margin: 10px; }
-  .pagos .pagos__menu {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #80ff00; }
+  .pagos .pagos__menu,
   .pagos .pagos__content {
     padding: 10px;
     margin: 10px;
@@ -56,10 +54,7 @@ ul {
   background: #e6ecff;
   padding: 10px;
   margin: 10px; }
-  .transferencias .transferencias__menu {
-    padding: 10px;
-    margin: 10px;
-    border: 1px solid #002080; }
+  .transferencias .transferencias__menu,
   .transferencias .transferencias__content {
     padding: 10px;
     margin: 10px;

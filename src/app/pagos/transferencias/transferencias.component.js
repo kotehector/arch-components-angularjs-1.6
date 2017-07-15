@@ -5,8 +5,23 @@ var pagosTransferencias = {
   templateUrl: 'app/pagos/transferencias/transferencias.html',
   controller: function($state) {
     var ctrl = this;
+    ctrl.infoMenu = [];
 
-    ctrl.$onInit = function() {};
+    ctrl.$onInit = function() {
+      ctrl.infoMenu = [{
+          titulo: 'Nueva',
+          estado: 'pagos.transferencias.nueva'
+        },{
+          titulo: 'Importar',
+          estado: 'pagos.transferencias.importar'
+        },{
+          titulo: 'Eliminar',
+          estado: 'pagos.transferencias.eliminar'
+        },{
+          titulo: 'Todas',
+          estado: 'pagos.transferencias.todas'
+        }];
+    }
 
     ctrl.$postLink = function() {
       ctrl.uiState = $state.current;

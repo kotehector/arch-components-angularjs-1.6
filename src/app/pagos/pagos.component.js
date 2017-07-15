@@ -5,9 +5,22 @@ var pagos = {
   templateUrl: 'app/pagos/pagos.html',
   controller: function($state) {
     var ctrl = this;
+    ctrl.infoMenu = [];
 
     ctrl.$onInit = function() {
-
+      ctrl.infoMenu = [{
+          titulo: 'Transferencias',
+          estado: 'pagos.transferencias'
+        },{
+          titulo: 'Cheques',
+          estado: 'pagos.cheques'
+        },{
+          titulo: 'Nóminas',
+          estado: 'pagos.nominas'
+        },{
+          titulo: 'Confirming',
+          estado: 'pagos.confirming'
+        }];
     }
 
     ctrl.$postLink = function() {
@@ -35,9 +48,6 @@ function config($stateProvider, $urlRouterProvider) {
           // vista por defecto <div ui-view>
           '@': {
             component: 'pagos'
-          },
-          'pagos-menu@pagos': {
-            component: 'pagosMenu'
           }
       }
 
