@@ -1,0 +1,43 @@
+<!-- <table>
+  <thead>
+    <th ng-repeat="item in $ctrl.columns">
+      {{ item.name }}
+    </th>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="item in $ctrl.data">
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.emisor }}</td>
+      <td>{{ item.cuentaCargo }}</td>
+      <td>{{ item.importe }}</td>
+      <td>{{ item.estado }}</td>
+    </tr>
+
+</table> -->
+
+<table
+  datatable=""
+  dt-columns="$ctrl.dtColumns"
+  dt-options="$ctrl.dtOptions"
+  class="row-border hover">
+
+  <!-- <thead>
+    <th>Nombre</th>
+    <th>Emisor</th>
+    <th>Cuenta de cargo</th>
+    <th>Importe</th>
+    <th>Estado</th>
+  </thead> -->
+
+  <tbody>
+    <tr ng-repeat="item in $ctrl.data">
+      <td>{{ item.nombre }}</td>
+      <td>{{ item.emisor }}</td>
+      <td>{{ item.cuentaCargo }}</td>
+      <td>{{ item.importe }}</td>
+      <td>{{ item.estado }}</td>
+    </tr>
+  </tbody>
+
+</table>

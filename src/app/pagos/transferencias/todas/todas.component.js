@@ -3,14 +3,32 @@
 
 var pagosTransferenciasTodas = {
   templateUrl: 'app/pagos/transferencias/todas/todas.html',
-  controller: function($state) {
+  controller: function($state, DTColumnBuilder) {
     var ctrl = this;
 
-    ctrl.$onInit = function() {};
+    ctrl.url = 'https://jsonplaceholder.typicode.com/posts';
+    ctrl.columnsDT = [];
+
+    ctrl.$onInit = function() {
+      ctrl.columnsDT = [
+        DTColumnBuilder.newColumn('id').withTitle('ID'),
+        DTColumnBuilder.newColumn('title').withTitle('Title'),
+        DTColumnBuilder.newColumn('body').withTitle('Body')
+      ];
+
+    };
 
     ctrl.$postLink = function() {
       ctrl.uiState = $state.current;
         console.log(ctrl.uiState);
+    }
+
+    ctrl.goTo = function(event) {
+      console.log("evento: ", event);
+      $state.go('pagos.transferencias.detalle', {
+          id: event.id
+      });
+      console.log("evento: ", event);
     }
   }
 }

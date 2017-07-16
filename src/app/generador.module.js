@@ -6,7 +6,8 @@
           'componentes',
           'pagos',
           'cobros',
-          'admin'
+          'admin',
+          'datatables'
         ]);
 
 })();

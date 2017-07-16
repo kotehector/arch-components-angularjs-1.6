@@ -3,7 +3,7 @@
 
 var menu = {
   bindings: {
-    info: '='
+    info: '<'
   },
   templateUrl: 'app/componentes/menu/menu.html'
 }
