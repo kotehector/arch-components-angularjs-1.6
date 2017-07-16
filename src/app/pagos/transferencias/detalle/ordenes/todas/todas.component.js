@@ -1,11 +1,11 @@
 (function() {
     'use strict';
 
-var pagosTransferenciasDetalleOrdenes = {
+var pagosTransferenciasDetalleOrdenesTodas = {
   bindings: {
     ordenesTransferencia: '<'
   },
-  templateUrl: 'app/pagos/transferencias/detalle/ordenes/ordenes.html',
+  templateUrl: 'app/pagos/transferencias/detalle/ordenes/todas/todas.html',
   controller: function($state, DTColumnBuilder) {
     var ctrl = this;
 
@@ -25,39 +25,31 @@ var pagosTransferenciasDetalleOrdenes = {
         console.log(ctrl.uiState);
     }
 
-    /*
     ctrl.goTo = function(event) {
+      console.log('onGoTo ordenes.todas: ', event);
       $state.go('pagos.transferencias.detalle.ordenes.detalle', {
+          postId: event.postId,
           id: event.id
       });
       console.log("evento: ", event);
     }
-    */
   }
 }
 
 angular
   .module('transferencias')
-  .component('pagosTransferenciasDetalleOrdenes', pagosTransferenciasDetalleOrdenes)
+  .component('pagosTransferenciasDetalleOrdenesTodas', pagosTransferenciasDetalleOrdenesTodas)
   .config(config);
 
 function config($stateProvider) {
   $stateProvider
-    .state('pagos.transferencias.detalle.ordenes', {
-      redirectTo: 'pagos.transferencias.detalle.ordenes.detalle',
-      parent: 'pagos.transferencias.detalle',
-      url: '/ordenes',
+    .state('pagos.transferencias.detalle.ordenes.todas', {
+      parent: 'pagos.transferencias.detalle.ordenes',
+      url: '/todas',
       views: {
-        'detalle-content@pagos.transferencias.detalle': {
-            component: 'pagosTransferenciasDetalleOrdenes'
+        'ordenes-content@pagos.transferencias.detalle.ordenes': {
+            component: 'pagosTransferenciasDetalleOrdenesTodas'
         }
-      },
-      resolve: {
-        ordenesTransferencia: function($http, $transition$) {
-          var params = $transition$.params();
-          return params;
-        }
-
       }
     });
 }

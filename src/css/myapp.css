@@ -73,3 +73,13 @@ ul {
     padding: 10px;
     margin: 10px;
     border: 1px solid #800060; }
+
+.ordenes {
+  border: 1px solid #009973;
+  background: #e6fff9;
+  padding: 10px;
+  margin: 10px; }
+  .ordenes .ordenes__content {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #009973; }

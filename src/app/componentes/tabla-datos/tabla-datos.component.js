@@ -38,10 +38,11 @@ var tablaDatos = {
     function selectItem(info) {
       ctrl.rowData = info;
       //$scope.$emit('goTo', item);
-      console.log(info);
+      console.log('info: ', info);
       ctrl.onGoTo({
           $event : {
-              id: info.id
+              id: info.id,
+              postId: info.postId
           }
       });
     }
