@@ -1,0 +1,13 @@
+<pre>class="pagos-transferencias-ordenes" | detalle.html</pre>
+<pre class="pre-router">ui-sref: {{ $ctrl.uiState.name }}</pre>
+
+<div class="ordenes">
+  <h1>Ordenes</h1>
+
+  <tabla-datos
+    url="{{ $ctrl.url }}"
+    columns=$ctrl.columnsDT
+    on-go-to="$ctrl.goTo($event);">
+  </tabla-datos>
+
+</div>

@@ -1,16 +1,27 @@
 <pre>class="pagos-transferencias-detalle" | detalle.html</pre>
 <pre class="pre-router">ui-sref: {{ $ctrl.uiState.name }}</pre>
 
-<div class="pagos-transferencias-detalle">
+<div class="detalle">
   <h1>Detalle Transferencia</h1>
 
   <p>Id:{{ $ctrl.detalleTransferencia.id }}</p>
   <p>Titulo: {{ $ctrl.detalleTransferencia.title }}</p>
   <p>Cuerpo: {{ $ctrl.detalleTransferencia.body }}</p>
 
-  <ul>
+
+  <!-- <ul>
     <li ng-repeat="orden in $ctrl.ordenesTransferencia">
       {{ orden }}
     </li>
-  </ul>
+  </ul> -->
+
+  <pre>class="detalle__content" | ui-view="detalle-content" | detalle.html</pre>
+  <div class="detalle__content" ui-view="detalle-content"></div>
+
+  <!-- <tabla-datos
+    url="{{ $ctrl.url }}"
+    columns=$ctrl.columnsDT
+    on-go-to="$ctrl.goTo($event);">
+  </tabla-datos> -->
+
 </div>

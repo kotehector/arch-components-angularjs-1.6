@@ -44,8 +44,6 @@ var tablaDatos = {
               id: info.id
           }
       });
-
-      console.log(info);
     }
 
     function getDataRow(nRow, aData, iDisplayIndex, iDisplayIndexFull) {

@@ -63,3 +63,13 @@ ul {
     padding: 10px;
     margin: 10px;
     border: 1px solid #002080; }
+
+.detalle {
+  border: 1px solid #800060;
+  background: #ffe6f9;
+  padding: 10px;
+  margin: 10px; }
+  .detalle .detalle__content {
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #800060; }

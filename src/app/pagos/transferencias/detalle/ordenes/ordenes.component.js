@@ -1,12 +1,11 @@
 (function() {
     'use strict';
 
-var pagosTransferenciasDetalle = {
+var pagosTransferenciasDetalleOrdenes = {
   bindings: {
-    detalleTransferencia: '<',
     ordenesTransferencia: '<'
   },
-  templateUrl: 'app/pagos/transferencias/detalle/detalle.html',
+  templateUrl: 'app/pagos/transferencias/detalle/ordenes/ordenes.html',
   controller: function($state, DTColumnBuilder) {
     var ctrl = this;
 
@@ -27,7 +26,7 @@ var pagosTransferenciasDetalle = {
     }
 
     ctrl.goTo = function(event) {
-      $state.go('pagos.transferencias.detalle.detalleOrden', {
+      $state.go('pagos.transferencias.ordenes', {
           id: event.id
       });
       console.log("evento: ", event);
@@ -37,28 +36,20 @@ var pagosTransferenciasDetalle = {
 
 angular
   .module('transferencias')
-  .component('pagosTransferenciasDetalle', pagosTransferenciasDetalle)
+  .component('pagosTransferenciasDetalleOrdenes', pagosTransferenciasDetalleOrdenes)
   .config(config);
 
 function config($stateProvider) {
   $stateProvider
-    .state('pagos.transferencias.detalle', {
-      parent: 'pagos.transferencias',
-      redirectTo: 'pagos.transferencias.detalle.ordenes',
-      url: '/detalle/:id',
+    .state('pagos.transferencias.detalle.ordenes', {
+      parent: 'pagos.transferencias.detalle',
+      url: '/ordenes',
       views: {
-        'transferencias-content@pagos.transferencias': {
-            component: 'pagosTransferenciasDetalle'
+        'detalle-content@pagos.transferencias.detalle': {
+            component: 'pagosTransferenciasDetalleOrdenes'
         }
       },
       resolve: {
-        detalleTransferencia: function($http, $transition$) {
-          return $http.get('https://jsonplaceholder.typicode.com/posts/' + $transition$.params().id)
-                      .then(function(response) {
-                        console.log(response);
-                        return response.data
-                      })
-        },
         ordenesTransferencia: function($http, $transition$) {
           var params = $transition$.params();
           return params;

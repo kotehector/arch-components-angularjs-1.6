@@ -24,7 +24,6 @@ var pagosTransferenciasTodas = {
     }
 
     ctrl.goTo = function(event) {
-      console.log("evento: ", event);
       $state.go('pagos.transferencias.detalle', {
           id: event.id
       });
