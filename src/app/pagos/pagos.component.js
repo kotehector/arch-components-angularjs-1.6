@@ -3,7 +3,7 @@
 
 var pagos = {
   templateUrl: 'app/pagos/pagos.html',
-  controller: function($state) {
+  controller: function($state, $transitions) {
     var ctrl = this;
     ctrl.infoMenu = [];
 
@@ -27,6 +27,21 @@ var pagos = {
       ctrl.uiState = $state.current;
         console.log(ctrl.uiState);
     }
+
+    ctrl.uiCanExit = function() {
+        console.log('exiting...');
+        return window.confirm('¿Seguro que quieres salir?');
+    }
+
+    var myTransition = $transitions.onStart({
+      to: 'pagos.*'
+    }, function($transition$) {
+      // code
+    });
+
+    ctrl.$onDestroy = function() {
+      myTransition()
+    }
   }
 }
 
@@ -35,11 +50,23 @@ angular
   .component('pagos', pagos)
   .config(config);
 
-function config($stateProvider, $urlRouterProvider) {
+function config($stateProvider) {
   $stateProvider
     .state('pagos', {
       redirectTo: 'pagos.transferencias',
       url: '/pagos',
+      data: {
+        requiredAuth: true
+      },
+      onEnter: function() {
+        console.log('onEnter');
+      },
+      onExit: function() {
+        console.log('onExit');
+      },
+      onRetain: function() {
+        console.log('onRetain');
+      },
       views: {
         // parent-view
           'generador-content': {
@@ -52,8 +79,6 @@ function config($stateProvider, $urlRouterProvider) {
       }
 
     });
-
-  $urlRouterProvider.otherwise('/pagos');
 }
 
 

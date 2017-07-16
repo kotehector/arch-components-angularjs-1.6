@@ -28,6 +28,9 @@ function config($stateProvider) {
   $stateProvider
     .state('pagos.transferencias.detalle', {
       parent: 'pagos.transferencias',
+      params:  {
+        id: null
+      },
       url: '/detalle/:id/ordenes',
       views: {
         'transferencias-content@pagos.transferencias': {

@@ -26,6 +26,10 @@ pre {
 
 ul {
   list-style: none; }
+  ul a {
+    text-decoration: none; }
+  ul .active {
+    border-bottom: 2px solid #664d00; }
 
 .generador {
   background: #ededed;

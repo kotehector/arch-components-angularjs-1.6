@@ -14,6 +14,9 @@ function config($stateProvider) {
   $stateProvider
     .state('cobros', {
       url: '/cobros',
+      data: {
+        requiredAuth: true
+      },
       views: {
         'generador-content': {
             component: 'cobros'

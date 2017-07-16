@@ -30,6 +30,20 @@ var generadorWeb = {
 
 angular
   .module('generador')
-  .component('generadorWeb', generadorWeb);
+  .component('generadorWeb', generadorWeb)
+  .config(config);
+
+function config($urlRouterProvider, $transitionsProvider, $locationProvider) {
+  $transitionsProvider.onStart({
+    to: function(state) {
+      console.log(state);
+      return !!(state.data.requiredAuth);
+    }
+  }, function($transition$) {
+      console.log($transition$);
+  });
+
+  $locationProvider.html5Mode(true);
+}
 
 })();

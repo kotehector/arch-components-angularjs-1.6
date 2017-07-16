@@ -1,6 +1,7 @@
 <!doctype html>
 <html ng-app="generador">
   <head>
+    <base href="/">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Curso Angular Basico</title>
@@ -8,6 +9,7 @@
 
     <!-- inject:css -->
     <!-- endinject -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="css/myapp.css">
 
   </head>
@@ -16,8 +18,16 @@
 
     <generador-web></generador-web>
 
-    <!-- inject:js -->
+
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.js"
+      integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+      crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-datatables/demo/src/archives/dist/angular-datatables.min.js"></script>
+    <!-- inject:js -->
     <!-- endinject -->
   </body>
 </html>

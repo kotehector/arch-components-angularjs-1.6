@@ -14,6 +14,9 @@ function config($stateProvider) {
   $stateProvider
     .state('admin', {
       url: '/admin',
+      data: {
+        requiredAuth: true
+      },
       views: {
         'generador-content': {
             component: 'admin'
